@@ -3,7 +3,7 @@ import './app.css'
 
 class App extends Component {
   state = {
-    activeIndex: 1,
+    activeIndex: 0,
     sizes: [
       {
         size: 'X'
@@ -17,13 +17,19 @@ class App extends Component {
     ]
   }
 
+  handleClick = (i) => {
+    this.setState({
+      activeIndex: i
+    })
+  }
+
   render () {
 
     const list = this.state.sizes.map((t, i) => (
       <li style={{
           background: `${this.state.activeIndex === i ? 'yellow': 'red'}`
         }}
-        onClick={() => console.log(i) } key={i}>{t.size}</li>
+        onClick={() => this.handleClick(i)} key={i}>{t.size}</li>
     ))
     return (
       <div className='app'>
