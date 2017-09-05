@@ -4,12 +4,12 @@ import './app.css'
 class App extends Component {
 
   state = {
-    background: 'none'
+    active: false
   }
 
   handleClick = () => {
     this.setState({
-      background: 'yellow'
+      active: !this.state.active
     })
   }
 
@@ -17,10 +17,7 @@ class App extends Component {
     return (
       <div className='app'>
         <div onClick={this.handleClick}
-          style={{
-            background: this.state.background
-          }}
-          className='button'>
+          className={`button ${this.state.active&&'active'}`}>
           click me
         </div>
       </div>
