@@ -1,0 +1,20 @@
+.app {
+  height: 100vh;
+  background-color: #212121;
+}
+
+.sizes {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.size {
+  border: 2px solid white;
+  text-align: center;
+  color: white;
+  width: 100px;
+  line-height: 50px;
+  border-radius: 5px;
+}

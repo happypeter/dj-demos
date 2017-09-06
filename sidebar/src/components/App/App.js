@@ -8,7 +8,7 @@ class App extends Component {
 
   handleClick = () => {
     this.setState({
-      open: !this.state.open 
+      open: !this.state.open
     })
   }
   render () {
@@ -16,7 +16,6 @@ class App extends Component {
       <div className='app'>
         <div onClick={this.handleClick}
           className='burger'>
-
         </div>
         <div className={`sidebar ${this.state.open && 'show'}`}>
 
