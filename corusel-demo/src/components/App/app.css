@@ -1,0 +1,11 @@
+.app {
+
+}
+
+.dish-card {
+  background-color: teal;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  font-size: 30px;
+}
