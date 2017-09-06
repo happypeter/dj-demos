@@ -4,22 +4,23 @@ import './app.css'
 class App extends Component {
 
   state = {
-    active: false
+    initVal: 200
   }
 
-  handleClick = () => {
+  tick = () => {
     this.setState({
-      active: !this.state.active
+      initVal: this.state.initVal -1
     })
+  }
+  componentDidMount = () => {
+    console.log('didmount')
+    window.setInterval(this.tick, 1000)
   }
 
   render () {
     return (
       <div className='app'>
-        <div onClick={this.handleClick}
-          className={`button ${this.state.active&&'active'}`}>
-          click me
-        </div>
+        {this.state.initVal}
       </div>
     )
   }
