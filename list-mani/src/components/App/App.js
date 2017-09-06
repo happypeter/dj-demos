@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   handleClick = (i) => {
+    console.log(i)
     this.setState({
       activeIndex: i
     })
@@ -26,10 +27,9 @@ class App extends Component {
   render () {
 
     const list = this.state.sizes.map((t, i) => (
-      <li style={{
-          background: `${this.state.activeIndex === i ? 'yellow': 'red'}`
-        }}
-        onClick={() => this.handleClick(i)} key={i}>{t.size}</li>
+      <div onClick={() => this.handleClick(i)}
+        className={`size ${this.state.activeIndex===i&& 'active'}`}
+        key={i}>{t.size}</div>
     ))
     return (
       <div className='app'>
