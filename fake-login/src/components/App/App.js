@@ -16,6 +16,12 @@ class App extends Component {
     })
   }
 
+  hideForm = () => {
+    this.setState({
+      showForm: false
+    })
+  }
+
   login = (userName) => {
     if (!userName) {
       return
@@ -37,7 +43,9 @@ class App extends Component {
           currentUser={currentUser}/>
         <LoginForm
           login={this.login}
-          show={showForm} />
+          show={showForm}
+          hideForm={this.hideForm}
+          />
       </div>
     )
   }

@@ -20,7 +20,7 @@ class LoginForm extends Component {
   }
 
   render () {
-    const { show } = this.props
+    const { show, hideForm } = this.props
     console.log('xxxx', show)
     return (
       <div className={`login-form ${show&&'show'} `}>
@@ -28,7 +28,8 @@ class LoginForm extends Component {
           <input value={this.state.userName}
           onChange={this.handleChange}
           type='text' />
-          <input type='submit' />
+        <button type='submit'>登录</button>
+        <button onClick={hideForm}>取消</button>
         </form>
       </div>
     )
