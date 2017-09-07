@@ -1,0 +1,16 @@
+.header {
+  background-color: #212121;
+  height: 50px;
+  color: white;
+  display: flex;
+}
+
+.header-main {
+  flex-grow: 1;
+}
+.header-login {
+  line-height: 50px;
+  color: #8e8e8a ;
+  flex-basis: 100px;
+  cursor: pointer;
+}

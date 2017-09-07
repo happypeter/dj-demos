@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './app.css'
+import Header from '../Header/Header'
 import LoginForm from '../LoginForm/LoginForm'
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
     const { currentUser, showForm } = this.state
     return (
       <div className='app'>
+        <Header />
         <LoginForm
           login={this.login}
           show={showForm} />
