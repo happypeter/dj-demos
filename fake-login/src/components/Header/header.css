@@ -3,6 +3,7 @@
   height: 50px;
   color: white;
   display: flex;
+  padding: 10px;
 }
 
 .header-main {
@@ -11,6 +12,6 @@
 .header-login {
   line-height: 50px;
   color: #8e8e8a ;
-  flex-basis: 100px;
   cursor: pointer;
+  padding-left: 20px  ;
 }

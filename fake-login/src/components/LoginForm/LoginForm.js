@@ -21,16 +21,17 @@ class LoginForm extends Component {
 
   render () {
     const { show, hideForm } = this.props
-    console.log('xxxx', show)
     return (
       <div className={`login-form ${show&&'show'} `}>
         <form onSubmit={this.handleSubmit} >
           <input value={this.state.userName}
           onChange={this.handleChange}
           type='text' />
-        <button type='submit'>登录</button>
-        <button onClick={hideForm}>取消</button>
+          <input type='password' />
+          <button type='submit'>登录</button>
         </form>
+        <button onClick={hideForm}>取消</button>
+
       </div>
     )
   }

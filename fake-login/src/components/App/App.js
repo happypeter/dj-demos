@@ -17,8 +17,10 @@ class App extends Component {
   }
 
   hideForm = () => {
+    console.log('hideForm....')
     this.setState({
-      showForm: false
+      showForm: false,
+      currentUser: ''
     })
   }
 
