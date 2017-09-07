@@ -32,6 +32,12 @@ class App extends Component {
     })
   }
 
+  logout = () => {
+    this.setState({
+      currentUser: ''
+    })
+  }
+
   render () {
 
     let userName = 'happypeter'
@@ -39,6 +45,7 @@ class App extends Component {
     return (
       <div className='app'>
         <Header
+          logout={this.logout}
           showLoginForm={this.showLoginForm}
           currentUser={currentUser}/>
         <LoginForm
