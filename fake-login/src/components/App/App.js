@@ -27,21 +27,17 @@ class App extends Component {
   }
 
   render () {
-    let loginStr = (
-      <div onClick={this.showLoginForm}
-        className="login">
-        Login
-      </div>
-    )
+
     let userName = 'happypeter'
     const { currentUser, showForm } = this.state
     return (
       <div className='app'>
-        <Header />
+        <Header
+          showLoginForm={this.showLoginForm}
+          currentUser={currentUser}/>
         <LoginForm
           login={this.login}
           show={showForm} />
-        {currentUser || loginStr}
       </div>
     )
   }
