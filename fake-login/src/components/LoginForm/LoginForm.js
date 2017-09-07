@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './login.css'
+import './login-form.css'
 
 class LoginForm extends Component {
 
@@ -30,8 +30,8 @@ class LoginForm extends Component {
           <input type='password' />
           <button type='submit'>登录</button>
         </form>
-        <button onClick={hideForm}>取消</button>
-
+        <button className='login-cancel'
+          onClick={hideForm}>取消</button>
       </div>
     )
   }

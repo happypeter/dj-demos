@@ -1,0 +1,46 @@
+.login-form {
+  height: 100px;
+  display: none;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.login-form input {
+  border: 0;
+  line-height: 20px;
+  padding: 10px;
+}
+
+.login-form button {
+  border: 0;
+  outline: 0;
+  color: white;
+  flex-basis: 40px;
+  margin-top: 30px;
+  background-color: #212121;
+}
+
+.login-form input:focus {
+  outline: none;
+}
+
+button.login-cancel {
+  background: #fff;
+  color: #212121;
+  border: 2px solid #212121;
+  width: 100%;
+  text-align: center;
+  margin-top: 4px;
+}
+
+
+.login-form.show {
+  display: block;
+}
