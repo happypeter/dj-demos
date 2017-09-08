@@ -23,13 +23,12 @@ class LoginForm extends Component {
     const { show, hideForm } = this.props
     return (
       <div className={`login-form ${show&&'show'} `}>
-        <form onSubmit={this.handleSubmit} >
           <input value={this.state.userName}
           onChange={this.handleChange}
           type='text' />
           <input type='password' />
-          <button type='submit'>登录</button>
-        </form>
+          <button onClick={this.handleSubmit}
+            type='submit'>登录</button>
         <button className='login-cancel'
           onClick={hideForm}>取消</button>
       </div>
