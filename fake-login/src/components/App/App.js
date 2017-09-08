@@ -6,7 +6,8 @@ import LoginForm from '../LoginForm/LoginForm'
 class App extends Component {
 
   state = {
-    showForm: true
+    showForm: true,
+    currentUser: ''
   }
 
   showLoginForm = () => {
@@ -22,14 +23,22 @@ class App extends Component {
     })
   }
 
+  login = (userName) => {
+    this.setState({
+      currentUser: userName
+    })
+  }
+
   render () {
-    const { showForm } = this.state
+    const { showForm, currentUser  } = this.state
     return (
       <div className='app'>
         <Header
+          currentUser={currentUser}
           showLoginForm={this.showLoginForm}
           />
         {showForm && <LoginForm
+            login={this.login}
             hideLoginForm={this.hideLoginForm}
           />}
       </div>
