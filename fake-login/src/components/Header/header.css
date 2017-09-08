@@ -9,4 +9,5 @@
 }
 .header-login-button {
   color: gray;
+  cursor: pointer;
 }

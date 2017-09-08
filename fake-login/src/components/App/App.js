@@ -6,7 +6,7 @@ import LoginForm from '../LoginForm/LoginForm'
 class App extends Component {
 
   state = {
-    showForm: false
+    showForm: true
   }
 
   showLoginForm = () => {

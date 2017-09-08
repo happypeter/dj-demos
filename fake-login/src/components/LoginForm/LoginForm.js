@@ -8,10 +8,11 @@ class LoginForm extends Component {
       <div className='login-form'>
         <input type='text' />
         <input type='password' />
-        <button>
+        <button className='login-button'>
           登录
         </button>
-        <button onClick={hideLoginForm}>
+        <button className='login-cancel'
+          onClick={hideLoginForm}>
           取消
         </button>
       </div>
