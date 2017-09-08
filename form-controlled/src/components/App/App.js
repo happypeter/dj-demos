@@ -8,7 +8,6 @@ class App extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
     // 提交数据到后台，未来我们用 axios
     console.log(this.state.username)
   }
