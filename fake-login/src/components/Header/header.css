@@ -15,3 +15,7 @@
 .logout-str {
   color: gray;
 }
+
+.logout-button {
+  cursor: pointer;
+}

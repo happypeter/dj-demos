@@ -6,8 +6,15 @@ import LoginForm from '../LoginForm/LoginForm'
 class App extends Component {
 
   state = {
-    showForm: true,
+    showForm: false,
     currentUser: ''
+  }
+
+  logout = () => {
+    this.setState({
+      showForm: false,
+      currentUser: ''
+    })
   }
 
   showLoginForm = () => {
@@ -36,6 +43,7 @@ class App extends Component {
         <Header
           currentUser={currentUser}
           showLoginForm={this.showLoginForm}
+          logout={this.logout}
           />
         {showForm && <LoginForm
             login={this.login}
