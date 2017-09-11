@@ -56,7 +56,6 @@ class App extends Component {
         })
   }
 
-
   componentDidMount = () => {
     this.timer = window.setInterval(this.tick, 1000)
   }
@@ -67,6 +66,7 @@ class App extends Component {
 
   render () {
     const { date, hour, min, sec } = this.state
+
     return (
       <div className='app'>
         {`${date}:${hour}:${min}:${sec}`}
