@@ -30,7 +30,8 @@ class Home extends Component {
 
   render () {
     const postList = this.state.posts.map((t, i) => (
-      <Link key={i} to={`/post/${t.id}`}>
+      <Link className='post-link'
+        key={i} to={`/post/${t.id}`}>
         {t.title}
       </Link>
     ))

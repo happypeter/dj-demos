@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './layout.css'
 import {
   Link
 } from 'react-router-dom'
@@ -10,7 +11,9 @@ class Layout extends Component {
         <div className='header'>
           <Link to='/'>首页</Link>
         </div>
-        {this.props.children}
+        <div className='main-wrap'>
+          {this.props.children}
+        </div>
         <div className='footer'>
           footer
         </div>
