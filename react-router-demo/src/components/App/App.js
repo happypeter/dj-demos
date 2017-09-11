@@ -4,10 +4,9 @@ import {
   BrowserRouter as Router,
   Route
  } from 'react-router-dom'
- import Post from '../Post/Post'
 
-import Home from '../Home/Home'
-
+import Layout from '../Layout/Layout'
+import Main from '../Main/Main'
 
 class App extends Component {
 
@@ -35,10 +34,9 @@ class App extends Component {
 
     return (
       <Router>
-        <div>
-          <Route exact path='/' component={Home} />
-          <Route path='/post/:id' component={Post} />
-        </div>
+        <Layout>
+          <Main />
+        </Layout>
       </Router>
     )
   }
