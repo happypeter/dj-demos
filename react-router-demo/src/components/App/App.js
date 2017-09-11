@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import './app.css'
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
  } from 'react-router-dom'
  import Post from '../Post/Post'
 
