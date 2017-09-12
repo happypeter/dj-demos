@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import './dog-img.css'
 import deleteIcon from './delete.svg'
+import {
+  Link
+} from 'react-router-dom'
 
 class DogImg extends Component {
 
@@ -10,17 +13,21 @@ class DogImg extends Component {
   }
 
   render () {
+    const { id, imgUrl } = this.props.dog
+
     let style = {
-      backgroundImage: `url(${this.props.dog.imgUrl})`
+      backgroundImage: `url(${imgUrl})`
     }
     return (
       <div className='dog-img'>
-        <img onClick={this.deleteIcon}
-        className='delete-icon'
-        src={deleteIcon} alt='img' />
-        <div style={style}
-        className='dog-img-icon'>
-        </div>
+        <Link to={`/dog/${id}`}>
+          <img onClick={this.deleteIcon}
+          className='delete-icon'
+          src={deleteIcon} alt='img' />
+          <div style={style}
+          className='dog-img-icon'>
+          </div>
+        </Link>
       </div>
     )
   }

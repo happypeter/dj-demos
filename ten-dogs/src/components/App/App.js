@@ -3,11 +3,12 @@ import './app.css'
 import add from './add.svg'
 import DogImg from '../DogImg/DogImg'
 import {
-  Router,
-  Link
+  BrowserRouter as Router,
+  Route
 } from 'react-router-dom'
 import axios from 'axios'
 import Form from '../Form/Form'
+import Dog from '../Dog/Dog'
 
 class App extends Component {
 
@@ -63,15 +64,18 @@ class App extends Component {
       dog={t} />
     ))
     return (
-      <div className='app'>
-        <div className='img-list'>
-          {dogList}
+      <Router>
+        <div className='app'>
+          <div className='img-list'>
+            {dogList}
+          </div>
+          <div  onClick={this.showForm} >
+            <img src={add} alt='add' />
+          </div>
+          {this.state.showForm && <Form addImgToList={this.addImgToList}/>}
+          <Route path='/dog/:id' component={Dog} />
         </div>
-        <div  onClick={this.showForm} >
-          <img src={add} alt='add' />
-        </div>
-        {this.state.showForm && <Form addImgToList={this.addImgToList}/>}
-      </div>
+      </Router>
     )
   }
 }

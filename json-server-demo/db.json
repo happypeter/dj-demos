@@ -1,20 +1,8 @@
 {
   "dogs": [
     {
-      "imgUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=734972231,2892744574&fm=27&gp=0.jpg",
-      "id": 1
-    },
-    {
-      "imgUrl": "http://pic1.sc.chinaz.com/Files/pic/pic9/201709/bpic3056_s.jpg",
-      "id": 7
-    },
-    {
-      "imgUrl": "http://pic1.sc.chinaz.com/Files/pic/pic9/201709/bpic3056_s.jpg",
-      "id": 14
-    },
-    {
       "imgUrl": "https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2300875363,445064071&fm=5",
-      "id": 17
+      "id": 1
     }
   ]
 }
