@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import './app.css'
+import add from './add.svg'
 import {
-  Router
+  Router,
+  Link
 } from 'react-router-dom'
 import axios from 'axios'
 import Form from '../Form/Form'
@@ -9,7 +11,8 @@ import Form from '../Form/Form'
 class App extends Component {
 
   state = {
-    dogs: []
+    dogs: [],
+    showForm: false
   }
 
   componentDidMount () {
@@ -23,6 +26,12 @@ class App extends Component {
     )
   }
 
+  showForm = () => {
+    this.setState({
+      showForm: true
+    })
+  }
+
   render () {
     const dogList = this.state.dogs.map(t => (
       <div className='dog-img'
@@ -33,8 +42,13 @@ class App extends Component {
     ))
     return (
       <div className='app'>
-        {dogList}
-        <Form />
+        <div className='img-list'>
+          {dogList}
+        </div>
+        <div  onClick={this.showForm} >
+          <img src={add} alt='add' />
+        </div>
+        {this.state.showForm && <Form />}
       </div>
     )
   }
