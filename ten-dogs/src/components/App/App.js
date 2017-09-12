@@ -32,6 +32,12 @@ class App extends Component {
     })
   }
 
+  addImgToList = (img) => {
+    console.log(img)
+    let dogs = [...this.state.dogs, img]
+    this.setState({ dogs })
+  }
+
   render () {
     const dogList = this.state.dogs.map(t => (
       <div className='dog-img'
@@ -48,7 +54,7 @@ class App extends Component {
         <div  onClick={this.showForm} >
           <img src={add} alt='add' />
         </div>
-        {this.state.showForm && <Form />}
+        {this.state.showForm && <Form addImgToList={this.addImgToList}/>}
       </div>
     )
   }

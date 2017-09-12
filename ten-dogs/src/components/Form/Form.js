@@ -12,6 +12,7 @@ class Form extends Component {
     axios.post('http://localhost:3008/dogs', this.state).then(
       res => {
         console.log(res.data)
+        this.props.addImgToList(res.data)
       }
     )
     console.log(this.state)
