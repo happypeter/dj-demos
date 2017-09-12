@@ -39,9 +39,28 @@ class App extends Component {
     this.setState({ dogs, showForm: false })
   }
 
+  filterList = (id) => {
+    console.log('id', id)
+    const { dogs } = this.state
+    this.setState({
+      dogs: dogs.filter(item => item.id !== id )
+    })
+  }
+
+  deleteIcon = (id) => {
+    console.log(id)
+    axios.delete(`http://localhost:3008/dogs/${id}`).then(
+      res => {
+        console.log(res)
+        this.filterList(id)
+      }
+    )
+  }
+
   render () {
     const dogList = this.state.dogs.map(t => (
-      <DogImg imgUrl={t.imgUrl} />
+      <DogImg key={t.id} deleteIcon={this.deleteIcon}
+      dog={t} />
     ))
     return (
       <div className='app'>
