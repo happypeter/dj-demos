@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "dogs": [
     {
-      "id": "134",
-      "title": "Git 使用技巧",
-      "content": "main content"
+      "imgUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=734972231,2892744574&fm=27&gp=0.jpg",
+      "id": 1
     },
     {
-      "id": "256",
-      "title": "命令使用技巧",
-      "content": "main content"
+      "imgUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=734972231,2892744574&fm=27&gp=0.jpg",
+      "id": 2
     },
     {
-      "id": "545",
-      "title": "Github 基础",
-      "content": "main content"
+      "imgUrl": "dd",
+      "id": 3
     }
   ]
 }
