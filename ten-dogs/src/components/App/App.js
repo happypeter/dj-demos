@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './app.css'
 import add from './add.svg'
+import DogImg from '../DogImg/DogImg'
 import {
   Router,
   Link
@@ -40,11 +41,7 @@ class App extends Component {
 
   render () {
     const dogList = this.state.dogs.map(t => (
-      <div className='dog-img'
-        style={{
-          backgroundImage: `url(${t.imgUrl})`
-        }}
-        key={t.id}  alt='dog' />
+      <DogImg imgUrl={t.imgUrl} />
     ))
     return (
       <div className='app'>

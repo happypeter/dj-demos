@@ -7,13 +7,3 @@
   border: 2px solid blue;
   flex-wrap: wrap;
 }
-
-.dog-img {
-  border: 2px solid red;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  background-position: center center;
-  background-size: 150px;
-  border-radius: 50%;
-}
