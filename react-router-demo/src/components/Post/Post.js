@@ -4,7 +4,7 @@ import axios from 'axios'
 class Post extends Component {
 
   state = {
-    post: []
+    post: {}
   }
 
   componentDidMount = () => {
@@ -16,11 +16,10 @@ class Post extends Component {
       })
     })
   }
-
   render () {
     const { post } = this.state
     return (
-      <div className='Post'>
+      <div className='post'>
         <h1>
           {post.title}
         </h1>
