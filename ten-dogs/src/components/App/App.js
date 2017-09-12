@@ -35,7 +35,7 @@ class App extends Component {
   addImgToList = (img) => {
     console.log(img)
     let dogs = [...this.state.dogs, img]
-    this.setState({ dogs })
+    this.setState({ dogs, showForm: false })
   }
 
   render () {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './form.css'
 
 
 class Form extends Component {
@@ -28,13 +29,15 @@ class Form extends Component {
   render () {
     return (
       <div className='form'>
-        <input
-          value={this.state.imgUrl}
-          onChange={this.handleChange}
-          type='text' />
-        <button onClick={this.handleSubmit}>
-          添加
-        </button>
+        <div className='input-wrap'>
+          <input
+            value={this.state.imgUrl}
+            onChange={this.handleChange}
+            type='text' />
+          <button onClick={this.handleSubmit}>
+            添加
+          </button>
+        </div>
       </div>
     )
   }
