@@ -1,0 +1,24 @@
+.form {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.form input {
+  padding: 6px;
+}
+
+.form input:focus {
+  outline: 0;
+}
+
+.form button {
+  border: 0;
+  background-color: deeppink;
+  color: white;
+  line-height: 1.9;
+}

@@ -1,3 +1,7 @@
+.home {
+  position: relative;
+}
+
 .dog-list {
   border: 2px solid red;
   display: flex;
@@ -8,11 +12,23 @@
   display: block;
 }
 
-.dog-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-size: 120px;
-  margin: 10px;
-  background-position: center center;
+
+
+.add-button {
+  border: 2px solid red;
+}
+
+.add-button img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+
+.form-wrap {
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  position: absolute;
 }

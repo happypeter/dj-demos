@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {
   Link
 } from 'react-router-dom'
+import './dog-icon.css'
 
 class DogIcon extends Component {
   render () {
