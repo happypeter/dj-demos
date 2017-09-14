@@ -11,6 +11,12 @@ class Home extends Component {
     showForm: true
   }
 
+  addDog = (dog) => {
+    this.setState({
+      dogs: [...this.state.dogs, dog]
+    })
+  }
+
   showForm = () => {
     this.setState({
       showForm: true
@@ -41,7 +47,10 @@ class Home extends Component {
     return (
       <div className='home'>
         <div className='form-wrap'>
-          {this.state.showForm && <Form hideForm={this.hideForm}/> }
+          {this.state.showForm
+            && <Form
+                 addDog={this.addDog}
+                 hideForm={this.hideForm}/> }
         </div>
         <div className='dog-list'>
           {dogList}
