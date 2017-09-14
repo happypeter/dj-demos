@@ -1,44 +1,28 @@
 import React, { Component } from 'react'
 import './home.css'
+import axios from 'axios'
 
 import DogIcon from '../DogIcon/DogIcon'
 
 class Home extends Component {
   state = {
-    "dogs": [
-      {
-        "id": "1",
-        "imgUrl": "http://img0.imgtn.bdimg.com/it/u=4088053820,899019662&fm=27&gp=0.jpg"
-      },
-      {
-        "id": "2",
-        "imgUrl": "http://img0.imgtn.bdimg.com/it/u=4088053820,899019662&fm=27&gp=0.jpg"
-      },
-      {
-        "id": "3",
-        "imgUrl": "http://img0.imgtn.bdimg.com/it/u=4088053820,899019662&fm=27&gp=0.jpg"
-      },
-      {
-        "id": "4",
-        "imgUrl": "http://img0.imgtn.bdimg.com/it/u=4088053820,899019662&fm=27&gp=0.jpg"
-      },
-      {
-        "id": "5",
-        "imgUrl": "http://img0.imgtn.bdimg.com/it/u=4088053820,899019662&fm=27&gp=0.jpg"
-      },
-      {
-        "id": "6",
-        "imgUrl": "http://img0.imgtn.bdimg.com/it/u=4088053820,899019662&fm=27&gp=0.jpg"
-      },
-      {
-        "id": "7",
-        "imgUrl": "http://img0.imgtn.bdimg.com/it/u=4088053820,899019662&fm=27&gp=0.jpg"
-      }
-    ]
+    dogs: []
   }
+
+  componentDidMount () {
+    axios.get('http://localhost:3008/dogs').then(
+      res => {
+        console.log(res.data)
+        this.setState({
+          dogs: res.data
+        })
+      }
+    )
+  }
+
   render () {
     const dogList = this.state.dogs.map(t => (
-      <DogIcon dog={t} />
+      <DogIcon key={t.id} dog={t} />
     ))
     return (
       <div className='home'>
