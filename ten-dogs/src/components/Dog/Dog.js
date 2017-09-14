@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class Dog extends Component {
   render () {
     return (
-      <div className='Dog'>
-        {this.props.match.params.id}
+      <div className='og'>
+        小狗详情
       </div>
     )
   }
