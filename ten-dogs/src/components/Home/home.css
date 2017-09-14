@@ -3,7 +3,6 @@
 }
 
 .dog-list {
-  border: 2px solid red;
   display: flex;
   flex-wrap: wrap;
 }
@@ -15,7 +14,6 @@
 
 
 .add-button {
-  border: 2px solid red;
 }
 
 .add-button img {
@@ -31,4 +29,5 @@
   left: 50%;
   margin-left: -100px;
   position: absolute;
+  z-index: 1000;
 }
