@@ -8,7 +8,7 @@ import Form from '../Form/Form'
 class Home extends Component {
   state = {
     dogs: [],
-    showForm: true
+    showForm: false
   }
 
   addDog = (dog) => {
@@ -40,9 +40,17 @@ class Home extends Component {
     )
   }
 
+  removeDog = (id) => {
+    console.log('remove', id)
+    this.setState({
+      dogs: this.state.dogs.filter(t => t.id !== id)
+    })
+  }
+
   render () {
     const dogList = this.state.dogs.map(t => (
-      <DogIcon key={t.id} dog={t} />
+      <DogIcon removeDog={this.removeDog}
+        key={t.id} dog={t} />
     ))
     return (
       <div className='home'>

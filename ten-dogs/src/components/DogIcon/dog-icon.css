@@ -6,3 +6,21 @@
   margin: 10px;
   background-position: center center;
 }
+
+.dog-icon {
+  border: 2px solid red;
+  position: relative;
+}
+
+.delete-icon {
+  display: none;
+  width: 15px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.dog-icon:hover .delete-icon {
+  display: block;
+}

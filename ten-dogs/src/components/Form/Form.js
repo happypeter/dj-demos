@@ -17,6 +17,11 @@ class Form extends Component {
   handleSubmit = () => {
     console.log(this.state.imgUrl)
     const imgUrl = this.state.imgUrl
+    this.props.hideForm()
+
+    if(!imgUrl.trim()) {
+      return
+    }
 
     axios.post('http://localhost:3008/dogs', { imgUrl })
     .then(
@@ -24,7 +29,6 @@ class Form extends Component {
         this.props.addDog(res.data)
       }
     )
-    this.props.hideForm()
   }
 
   render () {
