@@ -19,6 +19,10 @@ class App extends Component {
     ]
   }
 
+  addTodo = (todo) => {
+    console.log(todo)
+  }
+
   render () {
     const { todos } = this.state
     return (
@@ -29,7 +33,7 @@ class App extends Component {
             <TodoList todos={todos} />
           </div>
           <div className="form-wrap">
-            <Form />
+            <Form addTodo={this.addTodo}/>
           </div>
           <div className="actions-wrap">
             <Actions />
