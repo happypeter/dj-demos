@@ -18,6 +18,9 @@ class Form extends Component {
     const { text } = this.state
     console.log({ text })
     this.props.addTodo({ text })
+    this.setState({
+      text: ''
+    })
   }
 
   render () {

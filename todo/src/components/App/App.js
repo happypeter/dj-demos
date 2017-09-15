@@ -9,22 +9,48 @@ class App extends Component {
   state = {
     todos: [
       {
+        id: 1,
         text: '遛狗',
-        completed: true
+        completed: false
       },
       {
+        id: 2,
         text: '吃饭',
+        completed: false
+      },
+      {
+        id: 3,
+        text: '再吃饭',
         completed: false
       }
     ]
   }
 
   addTodo = (todo) => {
-    console.log(todo)
+    const { todos } = this.state
+    this.setState({
+      todos: [ ...todos,
+              { id: todos.length + 1,
+                ...todo,
+                completed: false } ]
+    })
   }
 
   filter = (str) => {
     console.log(str)
+  }
+
+  complete = (id) => {
+    const { todos } = this.state
+    let newTodos = todos.map(t => {
+      if (t.id === id) {
+        return {...t, completed: true}
+      }
+      return t
+    })
+    this.setState({
+      todos: newTodos
+    })
   }
 
   render () {
@@ -34,7 +60,9 @@ class App extends Component {
         <div className="main">
           <h1 className="title">Todo</h1>
           <div className="todo-list-wrap">
-            <TodoList todos={todos} />
+            <TodoList todos={todos}
+              complete={this.complete}
+              />
           </div>
           <div className="form-wrap">
             <Form addTodo={this.addTodo}/>

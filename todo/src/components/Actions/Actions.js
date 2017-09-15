@@ -15,10 +15,12 @@ class Actions extends Component {
         <img className='actions-left'
           onClick={() => this.handleClick('all')}
           src={listIcon}
+          alt=''
         />
         <img className='actions-right'
           onClick={() => this.handleClick('completed')}
           src={rightIcon}
+          alt=''
         />
       </div>
     )
