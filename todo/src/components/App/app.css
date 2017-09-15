@@ -1,0 +1,36 @@
+.app {
+  min-height: 100vh;
+  background-color: #00bcd4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.main {
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgb(0, 0, 0);
+  margin: 0 auto;
+  width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1.title {
+  text-align: center;
+}
+
+.todo-list-wrap {
+  border: 2px solid red;
+  flex-grow: 1;
+}
+
+.form-wrap {
+  border: 2px solid green;
+  padding: 10px;
+}
+
+.actions-wrap {
+  border: 2px solid purple;
+  padding: 10px;
+}
