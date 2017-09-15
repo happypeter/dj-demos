@@ -7,6 +7,7 @@ import Actions from '../Actions/Actions'
 class App extends Component {
 
   state = {
+    filter: '',
     todos: [
       {
         id: 1,
@@ -37,7 +38,17 @@ class App extends Component {
   }
 
   filter = (str) => {
-    console.log(str)
+    if (str === 'all') {
+      this.setState({
+        filter: ''
+      })
+    }
+
+    if (str === 'completed') {
+      this.setState({
+        filter: 'completed'
+      })
+    }
   }
 
   complete = (id) => {
@@ -54,13 +65,21 @@ class App extends Component {
   }
 
   render () {
-    const { todos } = this.state
+    const { todos, filter } = this.state
+
+    let newTodos = todos
+    if (filter) {
+      newTodos = todos.filter(t => {
+        return t.completed === true
+      })
+    }
+
     return (
       <div className='app'>
         <div className="main">
           <h1 className="title">Todo</h1>
           <div className="todo-list-wrap">
-            <TodoList todos={todos}
+            <TodoList todos={newTodos}
               complete={this.complete}
               />
           </div>
