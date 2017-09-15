@@ -5,13 +5,28 @@ import Form from '../Form/Form'
 import Actions from '../Actions/Actions'
 
 class App extends Component {
+
+  state = {
+    todos: [
+      {
+        text: '遛狗',
+        completed: true
+      },
+      {
+        text: '吃饭',
+        completed: false
+      }
+    ]
+  }
+
   render () {
+    const { todos } = this.state
     return (
       <div className='app'>
         <div className="main">
           <h1 className="title">Todo</h1>
           <div className="todo-list-wrap">
-            <TodoList />
+            <TodoList todos={todos} />
           </div>
           <div className="form-wrap">
             <Form />

@@ -1,0 +1,13 @@
+.todo-list {
+  padding: 10px 20px;
+}
+
+.todo-item {
+  line-height: 1.8;
+  margin: 10px;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #989191;
+}
