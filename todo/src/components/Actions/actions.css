@@ -1,0 +1,10 @@
+.actions {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.actions img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}

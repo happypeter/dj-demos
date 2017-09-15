@@ -23,6 +23,10 @@ class App extends Component {
     console.log(todo)
   }
 
+  filter = (str) => {
+    console.log(str)
+  }
+
   render () {
     const { todos } = this.state
     return (
@@ -36,7 +40,7 @@ class App extends Component {
             <Form addTodo={this.addTodo}/>
           </div>
           <div className="actions-wrap">
-            <Actions />
+            <Actions filter={this.filter}/>
           </div>
         </div>
       </div>
