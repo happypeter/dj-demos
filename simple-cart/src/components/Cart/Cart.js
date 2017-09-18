@@ -3,33 +3,42 @@ import './cart.css'
 
 class Cart extends Component {
   state = {
-    total: '23.1',
+    total: 0,
     productsInCart: [
       {
         id: '123',
         name: '提拉米苏',
         price: 12,
-        count: 2
+        count: 0
       },
       {
         id: '342',
         name: '黑森林',
         price: 13,
-        count: 2
+        count: 0
       }
     ]
   }
 
+  calTotal = (products) => {
+    const total = products.reduce((sum, t) => {
+      return sum + t.price*t.count
+    }, 0)
+    return total
+  }
+
+
   minus = (id) => {
     console.log(id)
     const newProductsInCart = this.state.productsInCart.map(t => {
-      if(id === t.id) {
+      if(id === t.id && t.count !== 0) {
         return {...t, count: t.count - 1}
       }
       return t;
     })
     this.setState({
-      productsInCart: newProductsInCart
+      productsInCart: newProductsInCart,
+      total: this.calTotal(newProductsInCart)
     })
   }
 
@@ -42,7 +51,8 @@ class Cart extends Component {
       return t;
     })
     this.setState({
-      productsInCart: newProductsInCart
+      productsInCart: newProductsInCart,
+      total: this.calTotal(newProductsInCart)
     })
   }
 
