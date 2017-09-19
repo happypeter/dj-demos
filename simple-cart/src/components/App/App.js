@@ -6,20 +6,20 @@ import Cart from '../Cart/Cart'
 class App extends Component {
 
   state = {
-    productsInCart: [
-      {
-        id: '123',
-        name: '提拉米苏',
-        price: 12,
-        count: 0
-      },
-      {
-        id: '342',
-        name: '黑森林',
-        price: 13,
-        count: 0
-      }
-    ]
+    productsInCart: []
+  }
+
+  addToCart = (product) => {
+    console.log(product)
+    this.setState({
+      productsInCart: [
+        ...this.state.productsInCart,
+        {
+          ...product,
+          count: 1
+        }
+      ]
+    })
   }
 
   minus = (id) => {
@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <div className='app'>
         <div className='products'>
-           <Products />
+           <Products addToCart={this.addToCart} />
         </div>
         <div className='cart'>
            <Cart

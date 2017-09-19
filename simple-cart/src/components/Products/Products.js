@@ -24,8 +24,11 @@ class Product extends Component {
 
   handleClick = (id) => {
     console.log(id)
+    const product = this.state.products
+                    .find(t => t.id === id)
+    this.props.addToCart(product)
   }
-  
+
   render () {
     const { products } = this.state
     let productList = products.map(t => (
