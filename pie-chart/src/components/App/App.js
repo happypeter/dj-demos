@@ -10,10 +10,11 @@ class App extends Component {
 
     return (
       <div className='app'>
-      	<PieChart width={800} height={400}>
-          <Pie data={data02} cx={500} cy={200}
+      	<PieChart className='pie-chart'
+          width={300} height={300}>
+          <Pie data={data02} cx={150} cy={150}
             dataKey='value'
-            innerRadius={40} outerRadius={80} fill="#82ca9d"
+            innerRadius={60} outerRadius={90} fill="#82ca9d"
             />
           <Tooltip/>
          </PieChart>
