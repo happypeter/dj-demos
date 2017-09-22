@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import './app.css'
-import Button from 'antd/lib/button';
+import Home from '../Home/Home';
+import {
+  HashRouter as Router,
+  Route
+} from 'react-router-dom'
 
 class App extends Component {
 
   render () {
     return (
-      <div className='app'>
-        <Button
-          type='primary'
-          >购买</Button>
-          <Button
-            >取消</Button>
-      </div>
+      <Router>
+        <div className='app'>
+          <Route path='/' component={Home} />
+        </div>
+      </Router>
     )
   }
 }
