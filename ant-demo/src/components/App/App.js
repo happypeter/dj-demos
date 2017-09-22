@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './app.css'
 import Home from '../Home/Home';
+import Dashboard from '../Dashboard/Dashboard'
 import {
   HashRouter as Router,
   Route
@@ -12,7 +13,8 @@ class App extends Component {
     return (
       <Router>
         <div className='app'>
-          <Route path='/' component={Home} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/dashboard' component={Dashboard} />
         </div>
       </Router>
     )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginForm from '../LoginForm/LoginForm'
+import Settings from '../../settings.js'
 
 import styled from 'styled-components'
 
@@ -16,11 +17,18 @@ const FormWrap = styled.div`
 `
 
 class Home extends Component {
+
+  login = (data) => {
+    console.log(data)
+    if (data.password !== Settings.user.password || data.username !== Settings.user.username) return
+    this.props.history.push('/dashboard')
+  }
+
   render () {
     return (
       <HomeWrap>
         <FormWrap>
-          <LoginForm />
+          <LoginForm onLogin={this.login}/>
         </FormWrap>
       </HomeWrap>
     )

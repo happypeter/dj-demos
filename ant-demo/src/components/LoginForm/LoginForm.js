@@ -8,15 +8,47 @@ const StyledButton = styled(Button)`
 `
 
 class LoginForm extends Component {
+  state = {
+    username: '',
+    password: ''
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const data = {
+      username: this.state.username,
+      password: this.state.password
+    }
+    this.props.onLogin(data)
+  }
+
+  handleUsernameChange = (e) => {
+    this.setState({
+      username: e.target.value
+    })
+  }
+
+  handlePasswordChange = (e) => {
+    this.setState({
+      password: e.target.value
+    })
+  }
+
   render () {
     return (
       <div className='LoginForm'>
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <FormItem>
-            <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />}  type='text' placeholder="Username" />
+            <Input
+              onChange={this.handleUsernameChange}
+              value={this.state.username}
+              prefix={<Icon type="user" style={{ fontSize: 13 }} />}  type='text' placeholder="Username" />
           </FormItem>
           <FormItem>
-            <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type='password' placeholder="Password" />
+            <Input
+              onChange={this.handlePasswordChange}
+              value={this.state.password}
+              prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type='password' placeholder="Password" />
           </FormItem>
           <FormItem>
             <StyledButton type="primary" htmlType="submit">
