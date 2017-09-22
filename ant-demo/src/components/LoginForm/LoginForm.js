@@ -3,6 +3,9 @@ import { Form, Icon, Input, Button } from 'antd'
 import styled from 'styled-components'
 const FormItem = Form.Item;
 
+const StyledButton = styled(Button)`
+  width: 100%;
+`
 
 class LoginForm extends Component {
   render () {
@@ -16,9 +19,9 @@ class LoginForm extends Component {
             <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type='password' placeholder="Password" />
           </FormItem>
           <FormItem>
-            <Button type="primary" htmlType="submit">
+            <StyledButton type="primary" htmlType="submit">
               登录
-            </Button>
+            </StyledButton>
           </FormItem>
         </Form>
       </div>
