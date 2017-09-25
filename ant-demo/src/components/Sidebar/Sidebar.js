@@ -22,6 +22,7 @@ const LogoutText = styled.div`
   text-align: center;
   color: white;
   line-height: 50px;
+  cursor: pointer;
 `
 
 const Username = styled.div`
@@ -32,12 +33,15 @@ const Username = styled.div`
 
 
 class Sidebar extends Component {
+
   render () {
     return (
       <SidebarWrap>
         <Navbar />
         <LogoutArea>
-          <LogoutText>
+          <LogoutText
+            onClick={this.props.onLogout}
+            >
             登出
           </LogoutText>
           <Username>

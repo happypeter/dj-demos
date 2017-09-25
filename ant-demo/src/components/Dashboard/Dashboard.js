@@ -18,11 +18,16 @@ const MainWrap = styled.div`
 `
 
 class DashBoard extends Component {
+  logout = () => {
+    window.localStorage.removeItem('userId')
+    this.props.history.push('/')
+  }
+
   render () {
     return (
       <DashBoardWrap>
         <SideWrap>
-          <Sidebar />
+          <Sidebar onLogout={this.logout}/>
         </SideWrap>
         <MainWrap>
           MainWrap

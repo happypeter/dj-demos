@@ -24,8 +24,9 @@ class Home extends Component {
     {
       return message.error('用户名密码错误')
     }
-
+    window.localStorage.setItem('userId', '23432ddds2')
     this.props.history.push('/dashboard')
+    // FIXME: 这里的 history 变成了 undefined 了
   }
 
   render () {

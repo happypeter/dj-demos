@@ -4,7 +4,8 @@ import Home from '../Home/Home';
 import Dashboard from '../Dashboard/Dashboard'
 import {
   HashRouter as Router,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom'
 
 class App extends Component {
@@ -14,7 +15,13 @@ class App extends Component {
       <Router>
         <div className='app'>
           <Route exact path='/' component={Home} />
-          <Route exact path='/dashboard' component={Dashboard} />
+          <Route path='/dashboard' render={() => {
+                 if (!window.localStorage.getItem('userId')) {
+                    return <Redirect to='/' />
+                 } else {
+                   return <Dashboard />
+                 }
+                }} />
         </div>
       </Router>
     )
