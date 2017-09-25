@@ -3,9 +3,12 @@ import styled from 'styled-components'
 import Sidebar from '../Sidebar/Sidebar'
 import Dishes from '../Dishes/Dishes'
 import Orders from '../Orders/Orders'
+import NewDish from '../NewDish/NewDish'
+import CompletedOrders from '../CompletedOrders/CompletedOrders'
 import {
   withRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom'
 
 const DashBoardWrap = styled.div`
@@ -55,8 +58,12 @@ class DashBoard extends Component {
         <MainWrap>
           <TopHeader />
           <MainContent>
-            <Route path='/dashboard/dishes' component={Dishes} />
-            <Route path='/dashboard/orders' component={Orders} />
+            <Switch>
+              <Route path='/dashboard/dishes' component={Dishes} />
+              <Route path='/dashboard/dishes/new' component={NewDish} />
+              <Route path='/dashboard/orders' component={Orders} />
+              <Route path='/dashboard/orders/completed' component={CompletedOrders} />
+            </Switch>
           </MainContent>
         </MainWrap>
       </DashBoardWrap>

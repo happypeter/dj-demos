@@ -74,7 +74,7 @@ class Sidebar extends Component {
            theme="light"
            onClick={this.handleClick}
            defaultOpenKeys={['dishes', 'orders']}
-           selectedKeys={this.state.selectedKeys}
+           selectedKeys={[this.state.selectedKeys]}
            mode='inline'
          >
            <SubMenu key='orders' title={<span><Icon type='file' /><span>订单管理</span></span>}>
