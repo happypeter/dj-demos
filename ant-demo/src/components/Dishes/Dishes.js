@@ -64,7 +64,8 @@ class Dishes extends Component {
     const { dishes } = this.state
     return (
       <div className='dishes'>
-        <Table dataSource={dishes} columns={columns} />
+        <Table rowKey={record => record._id}
+          dataSource={dishes} columns={columns} />
       </div>
     )
   }
