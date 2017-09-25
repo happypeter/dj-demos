@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../LoginForm/LoginForm'
 import Settings from '../../settings.js'
+import { message } from 'antd'
 
 import styled from 'styled-components'
 
@@ -20,7 +21,11 @@ class Home extends Component {
 
   login = (data) => {
     console.log(data)
-    if (data.password !== Settings.user.password || data.username !== Settings.user.username) return
+    if (data.password !== Settings.user.password || data.username !== Settings.user.username)
+    {
+      return message.error('用户名密码错误')
+    }
+
     this.props.history.push('/dashboard')
   }
 
