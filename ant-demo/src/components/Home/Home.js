@@ -11,7 +11,6 @@ const HomeWrap = styled.div`
 `;
 
 const FormWrap = styled.div`
-  border: 1px solid #ddd;
   padding: 40px 10px 10px;
   max-width: 350px;
   margin: 0 auto;
