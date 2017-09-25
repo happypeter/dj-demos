@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import {Menu, Icon } from 'antd'
+import {
+  withRouter
+} from 'react-router-dom'
+
 const SubMenu = Menu.SubMenu
 
 
@@ -46,6 +50,11 @@ const LogoWrap = styled.div`
 
 class Sidebar extends Component {
 
+  handleClick = (e) => {
+    console.log(e.key)
+    this.props.history.push(e.key)
+  }
+
   render () {
     return (
       <SidebarWrap>
@@ -56,6 +65,7 @@ class Sidebar extends Component {
          <Menu
            style={{borderRight: 'none'}}
            theme="light"
+           onClick={this.handleClick}
            defaultOpenKeys={['dishes', 'orders']}
            mode='inline'
          >
@@ -85,4 +95,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar
+export default withRouter(Sidebar)
