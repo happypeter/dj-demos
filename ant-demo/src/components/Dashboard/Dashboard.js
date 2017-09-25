@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Sidebar from '../Sidebar/Sidebar'
+import {
+  withRouter
+} from 'react-router-dom'
 
 const DashBoardWrap = styled.div`
   display: flex;
@@ -37,4 +40,4 @@ class DashBoard extends Component {
   }
 }
 
-export default DashBoard
+export default withRouter(DashBoard)
