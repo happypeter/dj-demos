@@ -25,7 +25,7 @@ class Home extends Component {
       return message.error('用户名密码错误')
     }
     window.localStorage.setItem('userId', Settings.user.userId)
-    this.props.history.push('/dashboard')
+    this.props.history.push('/dashboard/dishes')
   }
 
   render () {

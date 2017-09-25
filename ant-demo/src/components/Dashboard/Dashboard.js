@@ -5,6 +5,7 @@ import Dishes from '../Dishes/Dishes'
 import Orders from '../Orders/Orders'
 import NewDish from '../NewDish/NewDish'
 import CompletedOrders from '../CompletedOrders/CompletedOrders'
+import NotFound from '../NotFound/NotFound'
 import {
   withRouter,
   Route,
@@ -59,10 +60,11 @@ class DashBoard extends Component {
           <TopHeader />
           <MainContent>
             <Switch>
-              <Route path='/dashboard/dishes' component={Dishes} />
               <Route path='/dashboard/dishes/new' component={NewDish} />
-              <Route path='/dashboard/orders' component={Orders} />
+              <Route path='/dashboard/dishes' component={Dishes} />
               <Route path='/dashboard/orders/completed' component={CompletedOrders} />
+              <Route path='/dashboard/orders' component={Orders} />
+              <Route component={NotFound} />
             </Switch>
           </MainContent>
         </MainWrap>
