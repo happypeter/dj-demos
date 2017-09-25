@@ -50,9 +50,16 @@ const LogoWrap = styled.div`
 
 class Sidebar extends Component {
 
+  state = {
+    selectedKeys: this.props.history.location.pathname
+  }
+
   handleClick = (e) => {
     console.log(e.key)
     this.props.history.push(e.key)
+    this.setState({
+      selectedKeys: e.key
+    })
   }
 
   render () {
@@ -67,6 +74,7 @@ class Sidebar extends Component {
            theme="light"
            onClick={this.handleClick}
            defaultOpenKeys={['dishes', 'orders']}
+           selectedKeys={this.state.selectedKeys}
            mode='inline'
          >
            <SubMenu key='orders' title={<span><Icon type='file' /><span>订单管理</span></span>}>
