@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form, Button, Icon, Input, message } from 'antd'
 import styled from 'styled-components'
 import axios from 'axios'
+import store from '../../redux/store'
 
 const NewDishWrap = styled.div`
   max-width: 900px;
@@ -26,6 +27,8 @@ class NewDish extends Component {
         res => {
           console.log(res.data)
           this.props.history.push('/dashboard/dishes')
+          store.dispatch({ type: 'UPDATE_SELECTED_KEYS', path: '/dashboard/dishes' })
+          console.log('UPDATE_SELECTED_KEYS 之后', store.getState())
         }
       )
     } else {
