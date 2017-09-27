@@ -67,9 +67,8 @@ class Sidebar extends Component {
   handleClick = (e) => {
     console.log(e.key)
     this.props.history.push(e.key)
-    this.setState({
-      selectedKeys: [e.key]
-    })
+    const path = e.key
+    store.dispatch({ type: 'UPDATE_SELECTED_KEYS', path })
   }
 
   render () {
@@ -84,7 +83,7 @@ class Sidebar extends Component {
            theme="light"
            onClick={this.handleClick}
            defaultOpenKeys={['dishes', 'orders']}
-           selectedKeys={this.state.selectedKeys}
+           selectedKeys={store.getState().selectedKeys}
            mode='inline'
          >
            <SubMenu key='orders' title={<span><Icon type='file' /><span>订单管理</span></span>}>
