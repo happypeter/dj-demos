@@ -4,6 +4,7 @@ import {
   Link
 } from 'react-router-dom'
 import styled from 'styled-components'
+import axios from 'axios'
 
 const Poster = styled.img`
   width: 30px;
@@ -12,23 +13,20 @@ const Poster = styled.img`
 class Dishes extends Component {
 
   state = {
-    dishes:[
-      {
-          _id: '23232',
-          poster: 'https://avatars3.githubusercontent.com/u/72467?v=4&s=460',
-          name: '提拉米苏',
-          price: 32,
-          desc: '非常好吃'
-      },
-      {
-          _id: '34343',
-          poster: 'https://avatars3.githubusercontent.com/u/72467?v=4&s=460',
-          name: '黑森林',
-          price: 42,
-          desc: '来自德国'
-      }
-    ]
+    dishes:[]
   }
+
+  componentDidMount () {
+    axios.get(`http://localhost:3008/dishes`).then(
+      res => {
+        console.log(res)
+        this.setState({
+          dishes: res.data
+        })
+      }
+    )
+  }
+
 
   render () {
     const columns = [
@@ -64,7 +62,7 @@ class Dishes extends Component {
     const { dishes } = this.state
     return (
       <div className='dishes'>
-        <Table rowKey={record => record._id}
+        <Table rowKey={record => record.id}
           dataSource={dishes} columns={columns} />
       </div>
     )

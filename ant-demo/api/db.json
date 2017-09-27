@@ -1,0 +1,18 @@
+{
+  "dishes":[
+    {
+        "id": "23232",
+        "poster": "https://avatars3.githubusercontent.com/u/72467?v=4&s=460",
+        "name": "提拉米苏",
+        "price": 32,
+        "desc": "非常好吃"
+    },
+    {
+        "id": "34343",
+        "poster": "https://avatars3.githubusercontent.com/u/72467?v=4&s=460",
+        "name": "黑森林",
+        "price": 42,
+        "desc": "来自德国"
+    }
+  ]
+}
