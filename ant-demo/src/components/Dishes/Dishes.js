@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table } from 'antd'
+import { Table, message } from 'antd'
 import {
   Link
 } from 'react-router-dom'
@@ -27,6 +27,18 @@ class Dishes extends Component {
     )
   }
 
+  delete = (e, id) => {
+    e.preventDefault()
+    console.log(id)
+    axios.delete(`http://localhost:3008/dishes/${id}`).then(
+      res => {
+        message.info('删除成功！')
+        this.setState({
+          dishes: this.state.dishes.filter(t => t.id !== id)
+        })
+      }
+    )
+  }
 
   render () {
     const columns = [
@@ -54,8 +66,10 @@ class Dishes extends Component {
       },
       {
         title: '操作',
-        render: () => (
-          <Link to=''>删除</Link>
+        dataIndex: 'id',
+        key: 'id',
+        render: (id) => (
+          <Link to='' onClick={(e) => this.delete(e, id)}>删除</Link>
         )
       }
     ]
