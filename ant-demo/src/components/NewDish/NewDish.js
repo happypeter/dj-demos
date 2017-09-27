@@ -12,6 +12,7 @@ class NewDish extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     let data = this.props.form.getFieldsValue()
+    console.log(data)
     let unFilled = Object.keys(data).filter(
       prop => {
          return (!data[prop])
