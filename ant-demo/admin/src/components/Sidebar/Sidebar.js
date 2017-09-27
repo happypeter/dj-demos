@@ -4,6 +4,7 @@ import {Menu, Icon } from 'antd'
 import {
   withRouter
 } from 'react-router-dom'
+import store from '../../redux/store'
 
 const SubMenu = Menu.SubMenu
 
@@ -51,7 +52,11 @@ const LogoWrap = styled.div`
 class Sidebar extends Component {
 
   state = {
-    selectedKeys: this.props.history.location.pathname
+    selectedKeys: ''
+  }
+  
+  componentDidMount () {
+    console.log(store.getState())
   }
 
   handleClick = (e) => {
