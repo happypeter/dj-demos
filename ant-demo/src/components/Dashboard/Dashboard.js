@@ -31,12 +31,10 @@ const TopHeader = styled.div`
 
 const SideWrap = styled.div`
   width: 150px;
-  border: 1px solid blue;
 `
 
 const MainWrap = styled.div`
   flex-grow: 1;
-  border: 1px solid green;
 `
 
 const MainContent = styled.div`
