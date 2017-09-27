@@ -1,14 +1,14 @@
 import { createStore } from 'redux'
 
-
 const initState = {
-  selectedState: '/dashboard/dishes'
+  selectedKeys: ['/dashboard/dishes/new']
 }
 
 const rootReducer = (state=initState, action) => {
   switch (action.type) {
-    case 'XXX':
-      return state
+    case 'LOAD_SELECTED_KEYS':
+      console.log('LOAD_SELECTED_KEYS', action.path)
+      return { ...state, selectedKeys: [action.path] }
     default:
       return state
   }

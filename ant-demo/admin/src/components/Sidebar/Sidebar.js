@@ -52,18 +52,23 @@ const LogoWrap = styled.div`
 class Sidebar extends Component {
 
   state = {
-    selectedKeys: ''
+    selectedKeys: []
   }
-  
+
   componentDidMount () {
     console.log(store.getState())
+    const path = this.props.history.location.pathname
+    store.dispatch({ type: 'LOAD_SELECTED_KEYS', path })
+    this.setState({
+      selectedKeys: store.getState().selectedKeys
+    })
   }
 
   handleClick = (e) => {
     console.log(e.key)
     this.props.history.push(e.key)
     this.setState({
-      selectedKeys: e.key
+      selectedKeys: [e.key]
     })
   }
 
@@ -79,7 +84,7 @@ class Sidebar extends Component {
            theme="light"
            onClick={this.handleClick}
            defaultOpenKeys={['dishes', 'orders']}
-           selectedKeys={[this.state.selectedKeys]}
+           selectedKeys={this.state.selectedKeys}
            mode='inline'
          >
            <SubMenu key='orders' title={<span><Icon type='file' /><span>订单管理</span></span>}>
