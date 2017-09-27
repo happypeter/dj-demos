@@ -21,7 +21,7 @@ class Orders extends Component {
       res => {
         console.log(res)
         this.setState({
-          orders: res.data.filter(t => t.completed === false)
+          orders: res.data
         })
       }
     )
@@ -38,8 +38,14 @@ class Orders extends Component {
     axios.put(`http://localhost:3008/orders/${id}`, data).then(
       res => {
         message.info('发货成功！')
+
         this.setState({
-          orders: this.state.orders.filter(t => t.id !== id)
+          orders: this.state.orders.map(t => {
+            if (t.id === id) {
+              return { ...t, completed: true }
+            }
+            return t
+          })
         })
       }
     )
@@ -74,10 +80,11 @@ class Orders extends Component {
       }
     ]
     const { orders } = this.state
+    const newOrders = orders.filter(t => t.completed === false)
     return (
       <div className='orders'>
         <Table rowKey={record => record.id}
-          dataSource={orders} columns={columns} />
+          dataSource={newOrders} columns={columns} />
       </div>
     )
   }
