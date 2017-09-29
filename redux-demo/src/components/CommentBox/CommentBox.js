@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
 import './comment-box.css'
+import store from '../../store'
 
 class CommentBox extends Component {
   state = {
     comment: '',
-    comments: [
-      {
-        id: 1,
-        text: 'hello'
-      },
-      {
-        id: 2,
-        text: 'hi'
-      }
-    ]
+    comments: []
   }
 
   handleChange = (e) => {
@@ -26,18 +18,13 @@ class CommentBox extends Component {
     e.preventDefault()
     const { comment } = this.state
     this.setState({
-      comments: [ ...this.state.comments,
-        {
-          id: this.state.comments.length + 1,
-          text: comment
-        }
-      ],
       comment: ''
     })
   }
 
   render () {
-    const commentList = this.state.comments.map(t => (
+    const comments = store.getState()
+    const commentList = comments.map(t => (
       <div className='comment-item' key={t.id}>
         {t.text}
       </div>

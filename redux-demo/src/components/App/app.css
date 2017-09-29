@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .upper {
   background: #00bcd4;
 }
