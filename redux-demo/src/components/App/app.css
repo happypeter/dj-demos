@@ -3,3 +3,12 @@
   display: flex;
   flex-direction: column;
 }
+
+.upper {
+  background: #00bcd4;
+}
+
+.lower {
+  background-color: #f0f0f0;
+  flex-grow: 1;
+}

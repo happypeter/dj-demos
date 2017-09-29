@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './comment-box.css'
 
 class CommentBox extends Component {
   state = {
@@ -42,15 +43,17 @@ class CommentBox extends Component {
       </div>
     ))
     return (
-      <div className='CommentBox'>
+      <div className='comment-box'>
         <div className='comment-list'>
           {commentList}
         </div>
-        <input type='text' value={this.state.comment}
-          onChange={this.handleChange}
-         />
-        <button onClick={this.handleSubmit}
-        >发布</button>
+        <div className='comment-form'>
+          <input type='text' value={this.state.comment}
+            onChange={this.handleChange}
+           />
+          <button onClick={this.handleSubmit}
+          >发布</button>
+        </div>
       </div>
     )
   }
