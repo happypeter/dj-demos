@@ -11,9 +11,16 @@ const initState = [
     }
 ]
 const rootReducer = (state=initState, action) => {
+  console.log('action', action)
   switch (action.type) {
-    case 'XXX':
-      return state
+    case 'ADD_COMMENT':
+      return [
+        ...state,
+        {
+          id: state.length + 1,
+          text: action.text
+        }
+      ]
     default:
       return state
   }

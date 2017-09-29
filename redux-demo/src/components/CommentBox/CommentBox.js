@@ -20,6 +20,7 @@ class CommentBox extends Component {
     this.setState({
       comment: ''
     })
+    store.dispatch({ type: 'ADD_COMMENT', text: comment })
   }
 
   render () {
